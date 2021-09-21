@@ -12,7 +12,7 @@ function play(questions,answer)
   var userAnswer = readline.question(questions);
   if(userAnswer.toUpperCase() === answer.toUpperCase())
   {
-    console.log(chalk.green("Correct answer"));
+    console.log(chalk.green("Correct answer\n"));
     score++;
   }
   else{
@@ -20,7 +20,7 @@ function play(questions,answer)
     console.log(chalk.green("Correct Answer is: "+ answer + "\n"))
   }
   console.log("Your Score: ", score);
-  console.log("-------------------------");
+  console.log("-------------------------\n");
 }
 
 var ques = [{
