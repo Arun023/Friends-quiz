@@ -1,7 +1,9 @@
 var readline = require("readline-sync");
+const chalk = require('chalk');
 var score = 0;
 var userName = readline.question("What's Your Name? ");
-console.log("Welcome " + userName + " to My Game");
+console.log(chalk.yellowBright("\nWelcome " + userName + " Let's get Started how well do you know me?"));
+console.log(chalk.yellowBright("Here I will Ask Some Question About me\n"));
 
 // play funtion
 
@@ -10,12 +12,12 @@ function play(questions,answer)
   var userAnswer = readline.question(questions);
   if(userAnswer.toUpperCase() === answer.toUpperCase())
   {
-    console.log("Correct answer");
+    console.log(chalk.green("Correct answer"));
     score++;
   }
   else{
-    console.log("Wrong Answer");
-    score--;
+    console.log(chalk.red("Wrong Answer"));
+    console.log(chalk.green("Correct Answer is: "+ answer + "\n"))
   }
   console.log("Your Score: ", score);
   console.log("-------------------------");
@@ -31,7 +33,7 @@ var ques = [{
 },
 {
   question: "Where I Live? ",
-  answer: "Jodhpur"
+  answer: "Rajasthan"
 },
 {
   question: "What's my Dream? ",
@@ -42,4 +44,4 @@ var ques = [{
 for(i=0; i<ques.length; i++){
   play(ques[i].question, ques[i].answer);
 }
-console.log("Your Final Score: ",score);
+console.log(chalk.magenta("Your Final Score: ",score));
